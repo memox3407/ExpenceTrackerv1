@@ -52,28 +52,51 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchExpenses(userId: String) {
+        val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView) // Welcome TextView'i fonksiyonun başında tanımla
+
         database.child(userId).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 expenseList.clear()
                 var totalAmount = 0.0
+                var currency = "" // Varsayılan olarak boş bırakıyoruz
+                var isSingleCurrency = true // Tek bir para birimi kullanılıp kullanılmadığını kontrol etmek için
+
                 for (expenseSnapshot in snapshot.children) {
                     val expense = expenseSnapshot.getValue(Expense::class.java)
                     expense?.let {
                         expenseList.add(it)
-                        totalAmount += it.amount // Toplam tutarı ekliyoruz
+                        totalAmount += it.amount
+
+                        // İlk harcamanın para birimi belirlenir
+                        if (currency.isEmpty() && !it.currency.isNullOrEmpty()) {
+                            currency = it.currency
+                        } else if (currency != it.currency && !it.currency.isNullOrEmpty()) {
+                            // Eğer bir harcamanın para birimi farklıysa, tek bir para birimi olmadığını işaretleriz
+                            isSingleCurrency = false
+                        }
                     }
                 }
+
                 expenseAdapter.notifyDataSetChanged()
 
+                // Toplam tutarı dinamik olarak göster
+                if (isSingleCurrency && currency.isNotEmpty()) {
+                    // Tüm harcamalar aynı para birimindeyse
+                    totalAmountTextView.text = "Total: %.2f %s".format(totalAmount, currency)
+                } else if (!currency.isEmpty()) {
+                    // Para birimi boş değilse ve birden fazla para birimi varsa
+                    totalAmountTextView.text = "Total: %.2f (%s and Multiple Currencies)".format(totalAmount, currency)
+                } else {
+                    // Para birimi boşsa, sadece toplam tutarı göster
+                    totalAmountTextView.text = "Total: %.2f".format(totalAmount)
+                }
+
                 // Eğer veri varsa, welcomeTextView'i gizle
-                val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
                 if (expenseList.isNotEmpty()) {
                     welcomeTextView.visibility = View.GONE
                 } else {
                     welcomeTextView.visibility = View.VISIBLE
                 }
-
-                totalAmountTextView.text = "Total: $%.2f".format(totalAmount) // Toplam tutarı göster
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -81,5 +104,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
 
 }
