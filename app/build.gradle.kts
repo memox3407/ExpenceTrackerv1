@@ -52,4 +52,5 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-database:20.0.2")
+    implementation ("androidx.constraintlayout:constraintlayout:2.0.4")
 }
