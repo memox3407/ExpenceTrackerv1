@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "936764441978",
+    "firebase_url": "https://expence-tracker-a5765-default-rtdb.firebaseio.com",
+    "project_id": "expence-tracker-a5765",
+    "storage_bucket": "expence-tracker-a5765.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936764441978:android:2ba79bd9688f10765f82c3",
+        "android_client_info": {
+          "package_name": "com.example.ekspensetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5x1CMrQO4sPWQ2m5Y6k0L8b7PAstBK9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936764441978:android:cd305eb4219ca0055f82c3",
+        "android_client_info": {
+          "package_name": "com.example.expencetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5x1CMrQO4sPWQ2m5Y6k0L8b7PAstBK9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936764441978:android:ab7251ed9475b3a25f82c3",
+        "android_client_info": {
+          "package_name": "com.example.expensetrackerv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5x1CMrQO4sPWQ2m5Y6k0L8b7PAstBK9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936764441978-9djm0ueh6sm8296dnuo7fao1st27ck5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
