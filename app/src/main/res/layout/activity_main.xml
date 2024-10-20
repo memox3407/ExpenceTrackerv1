@@ -14,4 +14,9 @@ android:gravity="center">
     android:text="Welcome"
     android:textSize="24sp"
     android:padding="16dp" />
+    <Button
+        android:id="@+id/addExpenseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Expense" />
 </LinearLayout>
